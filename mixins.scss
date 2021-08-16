@@ -1,0 +1,116 @@
+// Variables....
+// Font:
+// Colors:
+
+//MIXINS...
+// Media Queries Mixin...
+//Media query for responsive design...
+//Max-Width...
+@mixin media-max($screen) {
+  @media screen and (max-width: $screen) {
+    @content;
+  }
+}
+
+//Min-Width...
+@mixin media-min($screen) {
+  @media screen and (min-width: $screen) {
+    @content;
+  }
+}
+
+//Center Div...
+@mixin center($width, $margin) {
+  width: $width;
+  margin: $margin;
+}
+
+//Font Family Size Color Weight Styling...
+@mixin text($text, $color, $size, $weight) {
+  font-family: $text;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+//Display Flex...
+@mixin flex($flex, $direction) {
+  display: $flex;
+  flex-direction: $direction;
+}
+
+//Display Flex Content...
+@mixin fullFlex($flex, $direction, $content) {
+  display: $flex;
+  flex-direction: $direction;
+  justify-content: $content;
+}
+
+//Display Grid Rows...
+@mixin grid-rows($grid, $rows) {
+  display: $grid;
+  grid-auto-rows: $rows;
+}
+
+//Display Grid Columns...
+@mixin grid-rows($grid, $columns) {
+  display: $grid;
+  grid-template-columns: $columns;
+}
+
+//Custom anchor tag button styling...
+@mixin btns(
+  $decoration,
+  $color,
+  $weight,
+  $font,
+  $transform,
+  $size,
+  $width,
+  $margin,
+  $bg-color,
+  $radius,
+  $padding,
+  $transition
+) {
+  text-decoration: $decoration;
+  color: $color;
+  font-weight: $weight;
+  font-family: $font;
+  text-transform: $transform;
+  font-size: $size;
+  width: $width;
+  margin: $margin;
+  background-color: $bg-color;
+  border-radius: $radius;
+  padding: $padding;
+  transition: $transition;
+}
+
+//Background Image...
+@mixin bg-img($img, $size) {
+  background-image: url($img);
+  background-size: $size;
+}
+
+@mixin placeholder-color($color) {
+  &::placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    //* WebKit browsers */
+    color: $color;
+  }
+  &:-moz-placeholder {
+    //* Mozilla Firefox 4 to 18 */
+    color: $color;
+  }
+  &::-moz-placeholder {
+    //* Mozilla Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    //* Internet Explorer 10+ */
+    color: $color;
+  }
+}
